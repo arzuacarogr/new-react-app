@@ -1,7 +1,17 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/list',
+        destination: '/pages/list'
+      },
+      {
+        source: '/opportunities',
+        destination: '/pages/opportunities'
+      }
+    ]
+  }
 };
 
-export default nextConfig;
+module.exports = nextConfig; 
